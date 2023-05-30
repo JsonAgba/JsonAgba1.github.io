@@ -1,0 +1,30 @@
+section div img{
+    float: right;
+    max-width:400px;
+    margin: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #b7b2a9;
+    opacity: 0;
+    animation: zoomin 1s ease forwards,slidedownup 2s ease infinite alternate;
+    animation-delay: 1s;
+}
+@keyframes zoomin{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes slidedownup{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-24px)
+    }
+    100%{
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>coverflow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        
+        body{
+            background-image: url('../image/backround.png');
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+         
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 28vw;
+  transition: opacity .6s ease;
+}
+
+.swiper-container.swiper-container-coverflow {
+  padding-top: 2%;
+}
+
+.swiper-container.loading {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.swiper-container:hover .swiper-button-prev,
+  .swiper-container:hover .swiper-button-next {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide .entity-img {
+  display: none;
+}
+
+.swiper-slide .content {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 50%;
+  padding-left: 5%;
+  color: #fff;
+}
+
+.swiper-slide .content .title {
+  font-size: 2.6em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.swiper-slide .content .caption {
+  display: block;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+[class^="swiper-button-"] {
+  width: 44px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.swiper-button-prev {
+  transform: translateX(50px);
+}
+
+.swiper-button-next {
+  transform: translateX(-50px);
+}
+
+ 
+    
+    </style>
+</head>
+<body>
+  <br><br><br><br><br><br><br><br>
+   <section class="swiper-container"> 
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" style="background-image:url(../image/bgi2.png)">
+      <img src="../image/bgi2.png" class="entity-img" />
+      <div class="content">
+        <p class="title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">声之形</p>
+        
+        <span class="caption" data-swiper-parallax="-20%">孤独的一人加上同样孤独的另一人，等于两人。这是一个心灵对另一个心灵的拯救，如果你也曾有过被孤立的经历，我想你也能从中获得救赎</span>
+      </div>
+    </div>
+    
+    
+    
+    <div class="swiper-slide" style="background-image:url(../image/8.png)">
+     
+      <img src="../image/8.png" class="entity-img" />
+      
+      <div class="content">
+        <p class="title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">四月是你的谎言</p>
+        <span class="caption" data-swiper-parallax="-20%">有了喜欢的人世界都会变的多姿多彩起来，爱之十年，却用整个四月编制出一个不爱你的谎言</span>
+      </div>
+    </div>
+    
+    
+    <div class="swiper-slide" style="background-image:url(../image/aila2.png)">
+      <img src="../image/aila2.png" class="entity-img" />
+      <div class="content">
+        <p class="title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">可塑性记忆</p>
+        <span class="caption" data-swiper-parallax="-20%">幸福和美好的回忆并不一定是救赎。越是美好的回忆，有时可能会令人越痛苦，乃至会让人感到恐惧。不管是离去的一方，还是被留下的一方也是如此。</span>
+      </div>
+    </div>
+    <div class="swiper-slide" style="background-image:url(../image/4.jpg.png)">
+      <img src="../image/4.jpg.png" class="entity-img" />
+      <div class="content">
+        <p class="title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">3D彼女</p>
+        <span class="caption" data-swiper-parallax="-20%">当再次遇见你时，我仍能想起那个我曾爱的你</span>
+      </div>
+    </div>
+    <div class="swiper-slide" style="background-image:url(../image/小夕.png)">
+      <img src="../image/小夕.png" class="entity-img" />
+      <div class="content">
+        <p class="title" data-swiper-parallax="-30%" data-swiper-parallax-scale=".7">clanned</p>
+        <span class="caption" data-swiper-parallax="-20%">爸爸说过，哭的地方只有厕所和爸爸的怀里。。。</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev swiper-button-white"></div>
+  <div class="swiper-button-next swiper-button-white"></div>
+</section>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+ <script>
+    
+    // Params
+var sliderSelector = '.swiper-container',
+    options = {
+      init: false,
+      loop: true,
+      speed:800,
+      slidesPerView: 2, // or 'auto'
+      // spaceBetween: 10,
+      centeredSlides : true,
+      effect: 'coverflow', // 'cube', 'fade', 'coverflow',
+      coverflowEffect: {
+        rotate: 50, // Slide rotate in degrees
+        stretch: 0, // Stretch space between slides (in px)
+        depth: 100, // Depth offset in px (slides translate in Z axis)
+        modifier: 1, // Effect multipler
+        slideShadows : true, // Enables slides shadows
+      },
+      grabCursor: true,
+      parallax: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        1023: {
+          slidesPerView: 1,
+          spaceBetween: 0
+        }
+      },
+      // Events
+      on: {
+        imagesReady: function(){
+          this.el.classList.remove('loading');
+        }
+      }
+    };
+var mySwiper = new Swiper(sliderSelector, options);
+
+// Initialize slider
+mySwiper.init();
+    
+    
+    </script>
+</body>
+</html>

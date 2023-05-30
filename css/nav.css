@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: url("../image/shouye.png") no-repeat;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border-radius: 50px;
+    box-shadow: 0px 25px 20px -20px rgba(255, 255, 255, 0.4);
+}
+nav ul a{
+    float: right;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 13px 35px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.5s;
+    z-index: 1; 
+    opacity: 0;
+    animation: slidedown 1s linear forwards;
+}
+
+nav div a::after{
+    content: "";
+    background: #b7b2a9;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    position: absolute;
+    top:100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    opacity: 0;
+    transition: top 0.5s ,opacity 0.5s;
+}
+nav ul a:hover{
+    color: rgb(253, 253, 253);
+}
+nav ul a:hover::after{
+    top:50%;
+    opacity: 1;
+    box-shadow: 0 0 20px #b7b2a9;
+}
+nav div h1{
+    display: inline-block;
+    width: 30%;
+    font-size: 50px;
+    margin: 0 5px;
+    letter-spacing: 20px;
+    text-align: center;
+    background: #edeef02c;
+    color: rgb(255, 255, 255);
+    cursor:pointer;
+    box-shadow: 0 0 20px #b7b2a9;
+    border-radius: 40px;
+    opacity: 0;
+    animation: slideRight 1s linear forwards;
+}
+div.text{
+    width: 100%;
+    height: 365px;
+    position: relative;
+    cursor: default;
+}
+div span{
+    font-size: 70px;
+    display: inline-block;
+    color: azure;
+    text-shadow: 0 0 20px #b7b2a9;
+    
+}
+div span.active1{
+    position: absolute;
+    top:200px;
+    left:400px;
+    animation: slidedown 1s ease forwards;
+}
+div span.active2{
+    position: absolute;
+    top:200px;
+    left:500px;
+    animation: slidedown 2s ease forwards;
+}
+div span.active3{
+    position: absolute;
+    top:200px;
+    left:600px;
+    animation: slidedown 3s ease forwards;
+}
+div span.active4{
+    position: absolute;
+    top:200px;
+    left:700px;
+    animation: slideleft 3s ease forwards;
+}
+div span.active5{
+    position: absolute;
+    top:300px;
+    left:500px;
+    animation: slideRight 3s ease forwards;
+}
+div span.active6{
+    position: absolute;
+    top:300px;
+    left:600px;
+    animation: slideRight 2s ease forwards;
+}
+div span.active7{
+    position: absolute;
+    top:300px;
+    left:700px;
+    animation: slideleft 2s ease forwards;
+}
+div span.active8{
+    position: absolute;
+    top:300px;
+    left:800px;
+    animation: slideleft 3s ease forwards;
+}
+div.start a{
+    width: 110px;
+    height: 50px;
+    position: absolute;
+    top:500px;
+    left:650px;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 40px;
+    text-decoration: none;
+    background-color: #ffffff5f;
+    box-shadow: 0 0 20px #b7b2a9;
+    text-shadow: 0 0 20px #b7b2a9;
+}
+div.start a:hover{
+    background: rgba(205, 233, 190, 0.688);
+}
+
+@keyframes slideRight{
+    0% {
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideleft{
+    0% {
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slidedown{
+    0% {
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
